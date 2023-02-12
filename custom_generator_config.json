@@ -1,0 +1,11 @@
+[  {"Custom_InputStreamFeatureGenerator"},
+  {"Custom_BlockExplicitIntentSanitiziers"},
+  {"Retrofit"},
+  {"SharedPreferences"},
+  {"OutputStream"},
+  {"PendingIntent"},
+  {"Reflection"},
+  {"SharedPreferences"},
+  {"ExternalStorage"},
+  {"IntentExtras"},
+  {"DeeplinkQueryParameters"}]

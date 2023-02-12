@@ -10,7 +10,7 @@
       ],
       "model": {
         "generations": [{
-          "kind": "ExternalStorage",
+          "kind": "StorageInput",
           "port": "Return"
         }]
       },

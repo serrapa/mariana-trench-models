@@ -20,7 +20,7 @@
             "model": {
                 "sources": [
                     {
-                        "kind": "IPC",
+                        "kind": "IPCInput",
                         "port": "Return"
                     }
                 ]

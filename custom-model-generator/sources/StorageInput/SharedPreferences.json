@@ -18,7 +18,7 @@
           ],
           "sources": [
             {
-              "kind": "SharedPreferences",
+              "kind": "StorageInput",
               "port": "Return"
             }
           ]

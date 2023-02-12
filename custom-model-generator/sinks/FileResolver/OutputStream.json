@@ -30,7 +30,7 @@
                         ],
                         "sinks": [
                             {
-                                "kind": "OutputWriteSink",
+                                "kind": "FileResolver",
                                 "port": "Argument(x)"
                             }
                         ]

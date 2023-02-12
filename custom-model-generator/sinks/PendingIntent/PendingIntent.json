@@ -34,7 +34,7 @@
               "variable": "x",
               "sinks": [
                 {
-                  "kind": "add_to_pending_intent",
+                  "kind": "PendingIntent",
                   "port": "Argument(x)"
                 }
                 ]

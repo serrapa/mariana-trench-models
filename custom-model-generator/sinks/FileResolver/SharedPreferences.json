@@ -31,7 +31,7 @@
             "variable": "x",
             "sinks": [
               {
-                "kind": "write_file",
+                "kind": "FileResolver",
                 "port": "Argument(x)"
               }
             ]

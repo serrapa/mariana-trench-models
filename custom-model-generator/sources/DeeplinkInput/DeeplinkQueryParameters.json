@@ -24,7 +24,7 @@
         ],
         "sources": [
           {
-            "kind": "Deeplink",
+            "kind": "DeeplinkInput",
             "port": "Return"
           }
         ]

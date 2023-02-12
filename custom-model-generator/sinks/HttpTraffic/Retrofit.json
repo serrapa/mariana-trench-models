@@ -24,7 +24,7 @@
               "variable": "x",
               "sinks": [
                 {
-                  "kind": "execute_HTTP_request",
+                  "kind": "HttpTraffic",
                   "port": "Argument(x)"
                 }
               ]
