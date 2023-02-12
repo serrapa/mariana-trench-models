@@ -1,0 +1,34 @@
+{
+  "model_generators": [
+    {
+      "find" : "methods",
+      "where" : [
+        {
+          "constraint": "parent",
+          "inner": {
+            "constraint": "name",
+            "pattern": "Landroid/net/Uri;"
+          }
+        },
+        {
+          "constraint": "any_of",
+          "inners" : [
+            { "constraint": "name", "pattern": "getQuery" },
+            { "constraint": "name", "pattern": "getQueryParameter.*" }
+          ]
+        }
+      ],
+      "model" : {
+        "modes": [
+          "skip-analysis"
+        ],
+        "sources": [
+          {
+            "kind": "Deeplink",
+            "port": "Return"
+          }
+        ]
+      },
+      "verbosity" : 1
+  }]
+}

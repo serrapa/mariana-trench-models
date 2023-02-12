@@ -1,0 +1,27 @@
+{
+            "find": "methods",
+            "where": [
+                {
+                    "constraint": "parent",
+                    "inner": {
+                        "constraint": "extends",
+                        "inner": {
+                            "constraint": "name",
+                            "pattern": "Ljava/io/InputStream;"
+                        }
+                    }
+                },
+                {
+                    "constraint": "name",
+                    "pattern": "read.*"
+                }
+            ],
+            "model": {
+                "propagation": [
+                    {
+                        "input": "Argument(0)",
+                        "output": "Argument(1)"
+                    }
+                ]
+            }
+}

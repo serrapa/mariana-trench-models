@@ -1,0 +1,43 @@
+{
+    "model_generators": [
+        {
+            "find": "methods",
+            "where": [
+                {
+                    "constraint": "parent",
+                    "inner": {
+                        "constraint": "extends",
+                        "inner": {
+                            "constraint": "name",
+                            "pattern": "Ljava/io/OutputStream;"
+                        }
+                    }
+                },
+                {
+                    "constraint": "name",
+                    "pattern": "write"
+                }
+            ],
+            "model": {
+                "for_all_parameters": [
+                    {
+                        "variable": "x",
+                        "where": [
+                            {
+                                "constraint": "name",
+                                "pattern": "\\[B"
+                            }
+                        ],
+                        "sinks": [
+                            {
+                                "kind": "OutputWriteSink",
+                                "port": "Argument(x)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "verbosity" : 1
+        }
+    ]
+}

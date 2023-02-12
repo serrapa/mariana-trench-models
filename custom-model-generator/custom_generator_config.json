@@ -1,0 +1,11 @@
+[
+  {
+    "name": "ImplicitIntentSourceGenerator"
+  },
+  {
+    "name": "Custom_PendingIntentSinkGenerator"
+  },
+  {
+    "name": "Custom_IntentVariableSourceGenerator"
+  }
+]

@@ -1,0 +1,104 @@
+[
+    {
+      "find": "methods",
+      "where": [
+        {
+          "constraint": "signature",
+          "pattern": "Landroid/os/Messenger;\\.<init>:\\(Landroid/os/Handler;\\)V"
+        }
+      ],
+      "shim": {
+        "callees": [
+          {
+            "type_of": "Argument(1)",
+            "method_name": "handleMessage:(Landroid/os/Message;)V"
+          }
+        ]
+      }
+    },
+    {
+      "find": "methods",
+      "where": [
+        {
+          "constraint": "signature",
+          "pattern": "Landroidx/fragment/app/FragmentTransaction;\\.(add|show|replace|attach|doAddOp):\\(Ljava/lang/Class;.*"
+        }
+      ],
+      "shim": {
+        "callees": [
+          {
+            "reflected_type_of": "Argument(1)",
+            "lifecycle_name": "xfragment_lifecycle_wrapper"
+          }
+        ]
+      }
+    },
+    {
+      "find": "methods",
+      "where": [
+        {
+          "constraint": "signature",
+          "pattern": "Landroidx/fragment/app/FragmentTransaction;\\.(add|show|replace|attach|doAddOp):\\(ILjava/lang/Class;.*"
+        }
+      ],
+      "shim": {
+        "callees": [
+          {
+            "reflected_type_of": "Argument(2)",
+            "lifecycle_name": "xfragment_lifecycle_wrapper"
+          }
+        ]
+      }
+    },
+    {
+      "find": "methods",
+      "where": [
+        {
+          "constraint": "signature",
+          "pattern": "Landroidx/fragment/app/FragmentTransaction;\\.(add|show|replace|attach|doAddOp):\\(Landroidx/fragment/app/Fragment;.*"
+        }
+      ],
+      "shim": {
+        "callees": [
+          {
+            "type_of": "Argument(1)",
+            "lifecycle_name": "xfragment_lifecycle_wrapper"
+          }
+        ]
+      }
+    },
+    {
+      "find": "methods",
+      "where": [
+        {
+          "constraint": "signature",
+          "pattern": "Landroidx/fragment/app/FragmentTransaction;\\.(add|show|replace|attach|doAddOp):\\(ILandroidx/fragment/app/Fragment;.*"
+        }
+      ],
+      "shim": {
+        "callees": [
+          {
+            "type_of": "Argument(2)",
+            "lifecycle_name": "xfragment_lifecycle_wrapper"
+          }
+        ]
+      }
+    },
+    {
+        "find": "methods",
+        "where": [
+            {
+                "constraint": "name",
+                "pattern": "setComponent"
+            }
+        ],
+        "shim": {
+            "callees": [
+                {
+                    "static": "",
+                    "lifecycle_name": "xfragment_lifecycle_wrapper"
+                }
+            ]
+        }
+    }
+  ]

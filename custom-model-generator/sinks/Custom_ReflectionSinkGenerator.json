@@ -1,0 +1,22 @@
+{
+  "model_generators": [
+    {
+      "find": "methods",
+      "where": [
+        {
+          "constraint": "signature",
+          "pattern": "Ljava/lang/Class;\\.forName.*"
+        }
+      ],
+      "model": {
+        "sinks": [
+            {
+             "kind": "Reflection",
+             "port": "Argument(0)"
+            }
+        ]
+      },
+      "verbosity" : 1
+    }
+  ]
+}

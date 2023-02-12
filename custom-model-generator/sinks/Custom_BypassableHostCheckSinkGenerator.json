@@ -1,0 +1,38 @@
+{
+  "model_generators": [
+    {
+      "find": "methods",
+      "where": [
+        {
+          "constraint": "parent",
+          "inner": {
+            "constraint": "name",
+            "pattern": "Ljava/lang/String;"
+          }
+        },
+        {
+          "constraint": "any_of",
+          "inners": [
+            {
+              "constraint": "name",
+              "pattern": "contains"
+            },
+            {
+              "constraint": "name",
+              "pattern": "endsWith"
+            }
+          ]
+        }
+      ],
+      "model": {
+        "sinks": [
+          {
+            "kind": "BypassableHostCheck",
+            "port": "Argument(0)"
+          }
+        ]
+      },
+      "verbosity": 1
+    }
+  ]
+}

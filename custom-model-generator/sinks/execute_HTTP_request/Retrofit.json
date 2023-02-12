@@ -1,0 +1,35 @@
+{
+    "model_generators": [
+      {
+        "find" : "methods",
+        "where" : [
+            {
+                "constraint": "any_of",
+                "inners" :[
+                    { "constraint": "has_annotation", "type": "Lretrofit2/http/GET;" },
+                    { "constraint": "has_annotation", "type": "Lretrofit2/http/HEAD;" },
+                    { "constraint": "has_annotation", "type": "Lretrofit2/http/OPTIONS;" },
+                    { "constraint": "has_annotation", "type": "Lretrofit2/http/POST;" },
+                    { "constraint": "has_annotation", "type": "Lretrofit2/http/PUT;" },
+                    { "constraint": "has_annotation", "type": "Lretrofit2/http/PATCH;" },
+                    { "constraint": "has_annotation", "type": "Lretrofit2/http/DELETE;" },
+                    { "constraint": "has_annotation", "type": "Lretrofit2/http/HTTP;" }
+                ]
+            }
+          
+        ],
+        "model" : {
+          "for_all_parameters": [
+            {
+              "variable": "x",
+              "sinks": [
+                {
+                  "kind": "execute_HTTP_request",
+                  "port": "Argument(x)"
+                }
+              ]
+            }]
+        },
+        "verbosity" : 1
+    }]
+  }

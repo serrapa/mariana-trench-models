@@ -1,0 +1,42 @@
+{
+  "model_generators": [
+    {
+      "find" : "methods",
+      "where" : [
+        {
+          "constraint": "parent",
+          "inner": {
+            "constraint": "name",
+            "pattern": "Landroid/content/SharedPreferences\\$Editor;"
+          }
+        },
+        {
+          "constraint": "any_of",
+          "inners" : [
+            { "constraint": "name", "pattern": "putString" },
+            { "constraint": "name", "pattern": "putStringSet" },
+            { "constraint": "name", "pattern": "putLong" },
+            { "constraint": "name", "pattern": "putInt" },
+            { "constraint": "name", "pattern": "putFloat" },
+            { "constraint": "name", "pattern": "putBoolean" }
+          ]
+        }
+      ],
+      "model" : {
+        "modes": [
+          "skip-analysis"
+        ],
+        "for_all_parameters": [
+          {
+            "variable": "x",
+            "sinks": [
+              {
+                "kind": "write_file",
+                "port": "Argument(x)"
+              }
+            ]
+          }]
+      },
+      "verbosity" : 1
+  }]
+}

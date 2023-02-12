@@ -1,0 +1,30 @@
+{
+    "model_generators": [
+        {
+            "find": "methods",
+            "where": [
+                {
+                    "constraint": "any_of",
+                    "inners": [
+                        {
+                            "constraint": "name",
+                            "pattern": "getStringExtra"
+                        },
+                        {
+                            "constraint": "name",
+                            "pattern": "getParcelableExtra"
+                        }
+                    ]
+                }
+            ],
+            "model": {
+                "sources": [
+                    {
+                        "kind": "IPC",
+                        "port": "Return"
+                    }
+                ]
+            },
+            "verbosity": 1
+        }]
+}

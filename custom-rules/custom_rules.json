@@ -1,0 +1,78 @@
+[
+    {
+      "name": "BypassableHostCheck",
+      "code": 6,
+      "description": "Values from user-controlled source can be exploited to bypass host check due to invalid methods (i.e. endsWith)",
+      "sources": [
+        "FragmentUserInput",
+        "ActivityUserInput",
+        "ProviderUserInput",
+        "ReceiverUserInput",
+        "ServiceUserInput"
+      ],
+      "sinks": [
+        "BypassableHostCheck"
+      ]
+    },
+    {
+      "name": "User input flows into Reflection method",
+      "code": 7,
+      "description": "Values from user-controlled source may eventually flow into a Reflection method",
+      "sources": [
+        "FragmentUserInput",
+        "ActivityUserInput",
+        "ProviderUserInput",
+        "ReceiverUserInput",
+        "ServiceUserInput"
+      ],
+      "sinks": [
+        "Reflection"
+      ]
+    },
+    {
+      "name": "Intent Extras flows into WebView",
+      "code": 8,
+      "description": "Values from intent extras source may eventually flow into a Webview load potentially causing XSS",
+      "sources": [
+        "IntentExtras"
+      ],
+      "sinks": [
+        "WebViewLoadContent",
+        "ActivityUserInput"
+      ]
+    },
+    {
+      "name": "Mariana-GITHUB-Issue78",
+      "code": 78,
+      "description": "FROM GITHUB ISSUE: 78 - propagating inputstream to buffer",
+      "sources": [
+        "ExternalSource"
+      ],
+      "sinks": [
+        "OutputWriteSink"
+      ]
+    },
+    {
+      "name": "Deep link query parameters flows into SharedPreferences",
+      "code": 9,
+      "description": "Each value retrieved from query parameters in a deep link URL is going to be stored in the Shared Preferences",
+      "sources": [
+        "DeeplinkUserInput"
+      ],
+      "sinks": [
+        "writeOnSharedPreferences"
+      ]
+    },
+    {
+      "name": "Pending Intent",
+      "code": 10,
+      "description": " xxxx",
+      "sources": [
+        "IntentCreation"
+      ],
+      "sinks": [
+        "PendingIntentSink"
+      ]
+    }
+  ]
+  

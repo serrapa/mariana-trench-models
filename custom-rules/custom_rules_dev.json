@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Rule Challenge 2",
+    "code": 10,
+    "description":"xxxx",
+    "sources": [
+      "SharedPreferences"
+    ],
+    "sinks": [
+      "RetrofitHTTPRequest"
+    ]
+  }
+]

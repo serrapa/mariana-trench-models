@@ -1,0 +1,14 @@
+[
+  {
+    "name": "DeeplinkQueryParameters"
+  },
+  {
+    "name": "Custom_SharedPreferencesSinkGenerator"
+  },
+  {
+    "name": "SharedPreferencesData"
+  },
+  {
+    "name" : "Retrofit"
+  }
+]

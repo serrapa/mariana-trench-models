@@ -1,0 +1,28 @@
+{
+    "model_generators": [
+      {
+        "find" : "methods",
+        "where" : [
+          {
+            "constraint": "parent",
+            "inner": {
+              "constraint": "name",
+              "pattern": "Landroid/content/SharedPreferences;"
+            }
+          },
+          { "constraint": "name", "pattern": "get.*" }
+        ],
+        "model" : {
+          "modes": [
+            "skip-analysis"
+          ],
+          "sources": [
+            {
+              "kind": "SharedPreferences",
+              "port": "Return"
+            }
+          ]
+        },
+        "verbosity" : 1
+    }]
+  }
