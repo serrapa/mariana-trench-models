@@ -3,16 +3,10 @@
     {
       "find": "methods",
       "where": [
-        {
-          "constraint": "name",
-          "pattern": "getExternal.*"
-        }
+        { "constraint": "name", "pattern": "getExternal.*" }
       ],
       "model": {
-        "generations": [{
-          "kind": "StorageInput",
-          "port": "Return"
-        }]
+        "generations": [{ "kind": "StorageInput", "port": "Return" }]
       },
       "verbosity" : 1
     }

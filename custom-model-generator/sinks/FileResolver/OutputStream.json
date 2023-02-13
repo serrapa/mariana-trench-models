@@ -7,32 +7,20 @@
                     "constraint": "parent",
                     "inner": {
                         "constraint": "extends",
-                        "inner": {
-                            "constraint": "name",
-                            "pattern": "Ljava/io/OutputStream;"
-                        }
+                        "inner": { "constraint": "name", "pattern": "Ljava/io/OutputStream;" }
                     }
                 },
-                {
-                    "constraint": "name",
-                    "pattern": "write"
-                }
+                { "constraint": "name", "pattern": "write" }
             ],
             "model": {
                 "for_all_parameters": [
                     {
                         "variable": "x",
                         "where": [
-                            {
-                                "constraint": "name",
-                                "pattern": "\\[B"
-                            }
+                            { "constraint": "name", "pattern": "\\[B" }
                         ],
                         "sinks": [
-                            {
-                                "kind": "FileResolver",
-                                "port": "Argument(x)"
-                            }
+                            { "kind": "FileResolver", "port": "Argument(x)" }
                         ]
                     }
                 ]

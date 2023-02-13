@@ -1,0 +1,220 @@
+{
+  "model_generators": [
+    {
+      "find": "methods",
+      "where": [
+        {
+          "constraint": "any_of",
+          "inners": [
+            {
+              "constraint": "parent",
+              "inner": {
+                "constraint": "name",
+                "pattern": "Landroidx/sqlite/db/SupportSQLiteDatabase;"
+              }
+            },
+            {
+              "constraint": "parent",
+              "inner": {
+                "constraint": "name",
+                "pattern": "Landroid/database/sqlite/SQLiteQueryBuilder;"
+              }
+            },
+            {
+              "constraint": "parent",
+              "inner": {
+                "constraint": "name",
+                "pattern": "Landroid/database/sqlite/SQLiteDatabase;"
+              }
+            },
+            {
+              "constraint": "parent",
+              "inner": {
+                "constraint": "name",
+                "pattern": "Landroid/content/ContentResolver;"
+              }
+            },
+            {
+              "constraint": "parent",
+              "inner": {
+                "constraint": "name",
+                "pattern": "Landroidx/loader/content/CursorLoader;"
+              }
+            }
+          ]
+        },
+        {
+          "constraint": "any_of",
+          "inners": [
+            {
+              "constraint": "name",
+              "pattern": "delete.*"
+            },
+            {
+              "constraint": "name",
+              "pattern": "execSQL"
+            },
+            {
+              "constraint": "name",
+              "pattern": "setTables"
+            },
+            {
+              "constraint": "name",
+              "pattern": "rawQuery.*"
+            },
+            {
+              "constraint": "name",
+              "pattern": "insert.*"
+            },
+            {
+              "constraint": "name",
+              "pattern": "replace.*"
+            },
+            {
+              "constraint": "name",
+              "pattern": "query.*"
+            },
+            {
+              "constraint": "name",
+              "pattern": "append.*"
+            },
+            {
+              "constraint": "name",
+              "pattern": "build.*"
+            },
+            {
+              "constraint": "name",
+              "pattern": "update.*"
+            },
+            {
+              "constraint": "name",
+              "pattern": "set(Selection|SortOrder)"
+            }
+          ]
+        }
+      ],
+      "model": {
+        "modes": [
+          "skip-analysis"
+        ],
+        "for_all_parameters": [
+          {
+            "variable": "idx",
+            "where": [
+              {
+                "constraint": "name",
+                "pattern": "^Ljava/lang/.*"
+              }
+            ],
+            "sinks": [
+              {
+                "kind": "SQLQuery",
+                "port": "Argument(idx)"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "find": "methods",
+      "where": [
+        {
+          "constraint": "signature",
+          "pattern": "Landroid/database/DatabaseUtils;\\.sqlEscapeString.*"
+        }
+      ],
+      "model": {
+        "propagation": [
+          {
+            "input": "Argument(0)",
+            "output": "Return",
+            "features": [
+              "via-sql-escape"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "find": "methods",
+      "where": [
+        {
+          "constraint": "any_of",
+          "inners": [
+            {
+              "constraint": "parent",
+              "inner": {
+                "constraint": "name",
+                "pattern": "Landroidx/sqlite/db/SupportSQLiteDatabase;"
+              }
+            },
+            {
+              "constraint": "parent",
+              "inner": {
+                "constraint": "name",
+                "pattern": "Landroid/database/sqlite/SQLiteQueryBuilder;"
+              }
+            },
+            {
+              "constraint": "parent",
+              "inner": {
+                "constraint": "name",
+                "pattern": "Landroid/database/sqlite/SQLiteDatabase;"
+              }
+            }
+          ]
+        },
+        {
+          "constraint": "any_of",
+          "inners": [
+            {
+              "constraint": "name",
+              "pattern": "delete.*"
+            },
+            {
+              "constraint": "name",
+              "pattern": "insert.*"
+            },
+            {
+              "constraint": "name",
+              "pattern": "replace.*"
+            },
+            {
+              "constraint": "name",
+              "pattern": "update.*"
+            }
+          ]
+        }
+      ],
+      "model": {
+        "for_all_parameters": [
+          {
+            "variable": "idx",
+            "where": [
+              {
+                "constraint": "any_of",
+                "inners": [
+                  {
+                    "constraint": "name",
+                    "pattern": "\\[Ljava/lang/String;"
+                  },
+                  {
+                    "constraint": "name",
+                    "pattern": "\\[?Landroid/content/ContentValues;"
+                  }
+                ]
+              }
+            ],
+            "sinks": [
+              {
+                "kind": "SQLMutation",
+                "port": "Argument(idx)"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

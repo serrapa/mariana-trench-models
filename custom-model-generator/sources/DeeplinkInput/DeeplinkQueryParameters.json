@@ -5,10 +5,7 @@
       "where" : [
         {
           "constraint": "parent",
-          "inner": {
-            "constraint": "name",
-            "pattern": "Landroid/net/Uri;"
-          }
+          "inner": { "constraint": "name", "pattern": "Landroid/net/Uri;" }
         },
         {
           "constraint": "any_of",
@@ -19,14 +16,9 @@
         }
       ],
       "model" : {
-        "modes": [
-          "skip-analysis"
-        ],
+        "modes": [ "skip-analysis" ],
         "sources": [
-          {
-            "kind": "DeeplinkInput",
-            "port": "Return"
-          }
+          { "kind": "DeeplinkInput", "port": "Return" }
         ]
       },
       "verbosity" : 1

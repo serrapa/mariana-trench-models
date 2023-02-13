@@ -4,16 +4,22 @@
       "find": "methods",
       "where": [
         {
-          "constraint": "signature",
-          "pattern": "Ljava/lang/Class;\\.forName.*"
+          "constraint": "any_of",
+          "inners": [
+            { "constraint": "signature", "pattern": "Ljava/lang/Class;\\.forName.*" },
+            { "constraint": "signature", "pattern": "Ljava/lang/Class;\\.getMethod.*" },
+            { "constraint": "signature", "pattern": "Ljava/lang/Class;\\.getDeclaredMethod.*" },
+            { "constraint": "signature", "pattern": "Ljava/lang/Class;\\.getDeclaredField.*" },
+            { "constraint": "signature", "pattern": "Ljava/lang/Class;\\.getField.*" },
+            { "constraint": "signature", "pattern": "Ljava/lang/Class;\\.getResource.*" },
+            { "constraint": "signature", "pattern": "Ljava/lang/Class;\\.getResourceAsStream.*" }
+          ]
         }
+        
       ],
       "model": {
         "sinks": [
-            {
-             "kind": "Reflection",
-             "port": "Argument(0)"
-            }
+            { "kind": "Reflection", "port": "Argument(1)" }
         ]
       },
       "verbosity" : 1

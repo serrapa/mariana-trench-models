@@ -1,11 +1,11 @@
-[
-  {
-    "name": "ImplicitIntentSourceGenerator"
-  },
-  {
-    "name": "Custom_PendingIntentSinkGenerator"
-  },
-  {
-    "name": "Custom_IntentVariableSourceGenerator"
-  }
-]
+[  {"name":"Custom_InputStreamFeatureGenerator"},
+  {"name":"Custom_BlockExplicitIntentSanitiziers"},
+  {"name":"Retrofit"},
+  {"name":"OutputStream"},
+  {"name":"SharedPreferencesModification"},
+  {"name":"PendingIntent"},
+  {"name":"Reflection"},
+  {"name":"SharedPreferences"},
+  {"name":"ExternalStorage"},
+  {"name":"IntentExtras"},
+  {"name":"DeeplinkQueryParameters"}]

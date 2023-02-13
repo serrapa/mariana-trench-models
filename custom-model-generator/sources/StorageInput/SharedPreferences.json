@@ -5,22 +5,14 @@
         "where" : [
           {
             "constraint": "parent",
-            "inner": {
-              "constraint": "name",
-              "pattern": "Landroid/content/SharedPreferences;"
-            }
+            "inner": { "constraint": "name", "pattern": "Landroid/content/SharedPreferences;" }
           },
           { "constraint": "name", "pattern": "get.*" }
         ],
         "model" : {
-          "modes": [
-            "skip-analysis"
-          ],
+          "modes": [ "skip-analysis" ],
           "sources": [
-            {
-              "kind": "StorageInput",
-              "port": "Return"
-            }
+            { "kind": "StorageInput", "port": "Return" }
           ]
         },
         "verbosity" : 1

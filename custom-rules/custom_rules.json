@@ -43,18 +43,18 @@
     },
     {
       "name": "Mariana-GITHUB-Issue78",
-      "code": 78,
+      "code": 9,
       "description": "FROM GITHUB ISSUE: 78 - propagating inputstream to buffer",
       "sources": [
         "ExternalSource"
       ],
       "sinks": [
-        "OutputWriteSink"
+        "FileResolver"
       ]
     },
     {
       "name": "Deep link query parameters flows into SharedPreferences",
-      "code": 9,
+      "code": 10,
       "description": "Each value retrieved from query parameters in a deep link URL is going to be stored in the Shared Preferences",
       "sources": [
         "DeeplinkUserInput"
@@ -65,7 +65,7 @@
     },
     {
       "name": "Pending Intent",
-      "code": 10,
+      "code": 11,
       "description": " xxxx",
       "sources": [
         "IntentCreation"

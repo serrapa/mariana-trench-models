@@ -5,5 +5,5 @@ This repository stores and houses various models for Mariana trench provided by 
 Bash command to create the `custom_generator_config.json` file:
 
 ```bash
-echo "[$(for word in $(find custom-model-generator \( -name "*.json" -and -type f \) -and \( -not -name "TODO_*" \) -and \( -not -name "*_config*json" \) -exec basename {} + | cut -f 1 -d '.'); do echo "  {\"$word\"},"; done; )" | sed '$s/.$/]/' > custom_generator_config.json
+echo "[$(for word in $(find custom-model-generator \( -name "*.json" -and -type f \) -and \( -not -name "TODO_*" \) -and \( -not -name "*_config*json" \) -exec basename {} + | cut -f 1 -d '.'); do echo "  {\"name\":\"$word\"},"; done; )" | sed '$s/.$/]/' > custom-model-generator/custom_generator_config.json
  ```

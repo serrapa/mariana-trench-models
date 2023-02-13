@@ -3,10 +3,10 @@
     "name": "DeeplinkQueryParameters"
   },
   {
-    "name": "Custom_SharedPreferencesSinkGenerator"
+    "name": "SharedPreferencesModification"
   },
   {
-    "name": "SharedPreferencesData"
+    "name": "SharedPreferences"
   },
   {
     "name" : "Retrofit"

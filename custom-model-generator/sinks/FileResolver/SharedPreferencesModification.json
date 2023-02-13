@@ -5,10 +5,7 @@
       "where" : [
         {
           "constraint": "parent",
-          "inner": {
-            "constraint": "name",
-            "pattern": "Landroid/content/SharedPreferences\\$Editor;"
-          }
+          "inner": { "constraint": "name", "pattern": "Landroid/content/SharedPreferences\\$Editor;" }
         },
         {
           "constraint": "any_of",
@@ -23,17 +20,12 @@
         }
       ],
       "model" : {
-        "modes": [
-          "skip-analysis"
-        ],
+        "modes": [ "skip-analysis" ],
         "for_all_parameters": [
           {
             "variable": "x",
             "sinks": [
-              {
-                "kind": "FileResolver",
-                "port": "Argument(x)"
-              }
+              { "kind": "FileResolver", "port": "Argument(x)" }
             ]
           }]
       },

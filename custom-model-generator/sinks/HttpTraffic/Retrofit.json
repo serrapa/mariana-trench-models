@@ -23,10 +23,7 @@
             {
               "variable": "x",
               "sinks": [
-                {
-                  "kind": "HttpTraffic",
-                  "port": "Argument(x)"
-                }
+                { "kind": "HttpTraffic", "port": "Argument(x)" }
               ]
             }]
         },
