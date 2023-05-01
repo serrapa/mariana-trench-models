@@ -6,7 +6,7 @@
         { "constraint": "name", "pattern": "getExternal.*" }
       ],
       "model": {
-        "generations": [{ "kind": "StorageInput", "port": "Return" }]
+        "generations": [{ "kind": "ExternalStorageInput", "port": "Return" }]
       },
       "verbosity" : 1
     }

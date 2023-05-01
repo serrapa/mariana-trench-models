@@ -4,10 +4,21 @@
     "code": 10,
     "description":"xxxx",
     "sources": [
-      "StorageInput"
+      "IntentData"
     ],
     "sinks": [
-      "HttpTraffic"
+      "Logging"
+    ]
+  },
+  {
+    "name": "Rule Challenge 3",
+    "code": 11,
+    "description":"xxxx",
+    "sources": [
+      "IntentCreation"
+    ],
+    "sinks": [
+      "Logging"
     ]
   }
 ]

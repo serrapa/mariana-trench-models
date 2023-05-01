@@ -1,14 +1,14 @@
 [
   {
-    "name": "DeeplinkQueryParameters"
+    "name": "IntentExtras"
   },
   {
-    "name": "SharedPreferencesModification"
+    "name": "Logging"
   },
   {
-    "name": "SharedPreferences"
+    "name": "TODO_ImplicitIntent2"
   },
   {
-    "name" : "Retrofit"
+    "name": "IntentDataPropagationGenerator"
   }
 ]

@@ -1,78 +1,148 @@
 [
-    {
-      "name": "BypassableHostCheck",
-      "code": 6,
-      "description": "Values from user-controlled source can be exploited to bypass host check due to invalid methods (i.e. endsWith)",
-      "sources": [
-        "FragmentUserInput",
-        "ActivityUserInput",
-        "ProviderUserInput",
-        "ReceiverUserInput",
-        "ServiceUserInput"
-      ],
-      "sinks": [
-        "BypassableHostCheck"
-      ]
-    },
-    {
-      "name": "User input flows into Reflection method",
-      "code": 7,
-      "description": "Values from user-controlled source may eventually flow into a Reflection method",
-      "sources": [
-        "FragmentUserInput",
-        "ActivityUserInput",
-        "ProviderUserInput",
-        "ReceiverUserInput",
-        "ServiceUserInput"
-      ],
-      "sinks": [
-        "Reflection"
-      ]
-    },
-    {
-      "name": "Intent Extras flows into WebView",
-      "code": 8,
-      "description": "Values from intent extras source may eventually flow into a Webview load potentially causing XSS",
-      "sources": [
-        "IntentExtras"
-      ],
-      "sinks": [
-        "WebViewLoadContent",
-        "ActivityUserInput"
-      ]
-    },
-    {
-      "name": "Mariana-GITHUB-Issue78",
-      "code": 9,
-      "description": "FROM GITHUB ISSUE: 78 - propagating inputstream to buffer",
-      "sources": [
-        "ExternalSource"
-      ],
-      "sinks": [
-        "FileResolver"
-      ]
-    },
-    {
-      "name": "Deep link query parameters flows into SharedPreferences",
-      "code": 10,
-      "description": "Each value retrieved from query parameters in a deep link URL is going to be stored in the Shared Preferences",
-      "sources": [
-        "DeeplinkUserInput"
-      ],
-      "sinks": [
-        "writeOnSharedPreferences"
-      ]
-    },
-    {
-      "name": "Pending Intent",
-      "code": 11,
-      "description": " xxxx",
-      "sources": [
+  {
+    "name": "User input flows into code execution sink (RCE)",
+    "code": 1,
+    "description": "Values from user-controlled source may eventually flow into code execution sink",
+    "sources": [
+      "ActivityUserInput",
+      "ProviderUserInput",
+      "ReceiverUserInput",
+      "ServiceUserInput"
+    ],
+    "sinks": [
+      "CodeExecution"
+    ]
+  },
+  {
+    "name": "User input flows into file resolver",
+    "code": 2,
+    "description": "Values from user-controlled source may eventually flow into sink file resolver",
+    "sources": [
+      "ActivityUserInput",
+      "ProviderUserInput",
+      "ReceiverUserInput",
+      "ServiceUserInput"
+    ],
+    "sinks": [
+      "FileResolver",
+      "InputStream"
+    ]
+  },
+  {
+    "name": "User input flows into implicitly launched intent",
+    "code": 3,
+    "description": "Values from user-controlled source may eventually flow into an implicit intent and intent launcher",
+    "multi_sources": {
+      "a": [
         "IntentCreation"
       ],
-      "sinks": [
-        "PendingIntentSink"
+      "b": [
+        "ActivityUserInput",
+        "ReceiverUserInput",
+        "ServiceUserInput"
       ]
-    }
-  ]
+    },
+    "partial_sinks": [
+      "LaunchingComponent"
+    ]
+  },
+  {
+    "name": "User input flows into raw SQL statement",
+    "code": 4,
+    "description": "Values from user-controlled source may eventually flow into a raw SQL statement potentially causing SQL injection",
+    "sources": [
+      "ActivityUserInput",
+      "ProviderUserInput",
+      "ReceiverUserInput",
+      "ServiceUserInput"
+    ],
+    "sinks": [
+      "SQLQuery"
+    ]
+  },
+  {
+    "name": "User input flows into WebView load",
+    "code": 5,
+    "description": "Values from user-controlled source may eventually flow into a Webview load potentially causing XSS",
+    "sources": [
+      "ActivityUserInput",
+      "ProviderUserInput",
+      "ReceiverUserInput",
+      "ServiceUserInput"
+    ],
+    "sinks": [
+      "WebViewLoadContent"
+    ]
+  },
+  {
+    "name": "User input flows into Reflection method",
+    "code": 7,
+    "description": "Values from user-controlled source may eventually flow into a Reflection method",
+    "sources": [
+      "FragmentUserInput",
+      "ActivityUserInput",
+      "ProviderUserInput",
+      "ReceiverUserInput",
+      "ServiceUserInput"
+    ],
+    "sinks": [
+      "Reflection"
+    ]
+  },
+  {
+    "name": "Intent Extras flows into WebView",
+    "code": 8,
+    "description": "Values from intent extras source may eventually flow into a Webview load potentially causing XSS",
+    "sources": [
+      "IntentData"
+    ],
+    "sinks": [
+      "WebViewLoadContent",
+      "LaunchingComponent",
+      "FileResolver",
+      "CodeExecution",
+      "PendingIntent"
+    ]
+  },
+  {
+    "name": "Mariana-GITHUB-Issue78",
+    "code": 9,
+    "description": "FROM GITHUB ISSUE: 78 - propagating inputstream to buffer",
+    "sources": [
+      "ExternalSource"
+    ],
+    "sinks": [
+      "FileResolver"
+    ]
+  },
+  {
+    "name": "Deep link query parameters flows into SharedPreferences",
+    "code": 10,
+    "description": "Each value retrieved from query parameters in a deep link URL is going to be stored in the Shared Preferences",
+    "sources": [
+      "DeeplinkInput"
+    ],
+    "sinks": [
+      "FileResolver"
+    ]
+  },
+  {
+    "name": "Intent data input flows into a Pending Intent",
+    "code": 11,
+    "description": "Values from user-controlled source may eventually flow into a Pending Intent",
+    "sources": [
+      "FragmentUserInput",
+      "ActivityUserInput",
+      "ProviderUserInput",
+      "ReceiverUserInput",
+      "ServiceUserInput",
+      "IntentCreation",
+      "IntentData",
+      "DeeplinkInput"
+    ],
+    "sinks": [
+      "PendingIntent"
+    ]
+  }
+]
   

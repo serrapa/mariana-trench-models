@@ -1,0 +1,27 @@
+{
+    "model_generators": [
+        {
+            "find": "methods",
+            "where": [
+                {
+                    "constraint": "parent",
+                    "inner": {
+                        "constraint": "name",
+                        "pattern": "Landroid/util/Log;"
+                    }
+                }
+            ],
+            "model": {
+                "for_all_parameters": [
+                    {
+                        "variable": "x",
+                        "sinks": [
+                            { "kind": "Logging", "port": "Argument(x)" }
+                        ]
+                    }
+                ]
+            },
+            "verbosity" : 1
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+  "model_generators": [
+    {
+        "find": "methods",
+        "where": [
+          { 
+            "constraint": "any_of", 
+            "inners": [
+              {
+                "constraint": "parent",
+                "inner": { "constraint": "name", "pattern": "Landroid/content/Intent;" }
+              },
+              {
+                "constraint": "parent",
+                "inner": {
+                  "constraint": "extends",
+                  "inner": { "constraint": "name", "pattern": "Landroid/content/Intent;" }
+                }
+              }
+            ]
+          }
+        ],
+        "model": {
+          "sources": [ 
+            { 
+              "kind": "IntentData", 
+              "port": "Return"
+            } 
+          ]
+        },
+        "verbosity": 1
+    }]
+}

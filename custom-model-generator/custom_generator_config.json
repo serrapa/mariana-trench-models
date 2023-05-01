@@ -1,11 +1,13 @@
-[  {"name":"Custom_InputStreamFeatureGenerator"},
+[
+  {"name":"Custom_InputStreamFeatureGenerator"},
   {"name":"Custom_BlockExplicitIntentSanitiziers"},
-  {"name":"Retrofit"},
-  {"name":"OutputStream"},
-  {"name":"SharedPreferencesModification"},
+  {"name":"SharedPreferencesSinkGenerator"},
   {"name":"PendingIntent"},
+  {"name":"OutputStream"},
+  {"name":"Retrofit"},
   {"name":"Reflection"},
-  {"name":"SharedPreferences"},
-  {"name":"ExternalStorage"},
   {"name":"IntentExtras"},
-  {"name":"DeeplinkQueryParameters"}]
+  {"name":"DeeplinkQueryParameters"},
+  {"name":"SharedPreferences"},
+  {"name":"ExternalStorage"}
+]

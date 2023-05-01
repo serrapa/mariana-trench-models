@@ -1,0 +1,34 @@
+{
+    "model_generators": [
+      {
+        "find": "methods",
+        "where": [
+            {
+              "constraint": "any_of",
+              "inners": [
+                { "constraint": "name", "pattern": "getData" }
+              ]
+            }
+        ],
+        "model": {
+          "for_all_parameters": [
+              {
+                "variable": "x",
+                "propagation": [
+                  {
+                    "input": "Argument(x)",
+                    "output": "Return",
+                    "features": [
+                      "from-intent-data"
+                    ]
+                  }
+                ]
+              }
+          ]
+          
+        },
+        "verbosity": 1
+      }
+    ]
+  }
+  
